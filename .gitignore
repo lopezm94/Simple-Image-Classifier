@@ -1,5 +1,9 @@
 .cache
-*.o *.mex* *.obj libsvm-3.22/svm.o
-libsvm-3.22/svm.o libsvm-3.22/svm-train
-libsvm-3.22/svm-predict libsvm-3.22/svm-scale
+libsvm-3.22/svm-predict
+libsvm-3.22/svm-scale
+libsvm-3.22/svm-train
+libsvm-3.22/svm.o
 libsvm-3.22/libsvm.so.2
+*.o
+*.mex 
+*.obj
