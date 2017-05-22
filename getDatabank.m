@@ -11,14 +11,14 @@ for i=1:length(labels)
   class_set.files = struct('imfile',{},'annfile',{});
 
   j = 0;
-  n = length(dir([class_location, '*']))/2;
+  n = length(dir([class_location, '\*.mat']));
   for counter=1:n
-    j+=1;
+    j=j+1;
     %% Get next filename
     image_file = [class_location, sprintf('image_%04d.jpg',j)];
     annotation_file = [class_location, sprintf('annotation_%04d.mat',j)];
-    while (exist(image_file, 'file')!=2)
-      j+=1;
+    while (exist(image_file, 'file')~=2) && (j < n)
+      j=j+1;
       image_file = strcat(class_location,sprintf('image_%04d.jpg',j));
       annotation_file = strcat(class_location,sprintf('annotation_%04d.mat',j));
     end

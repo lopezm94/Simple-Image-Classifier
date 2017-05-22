@@ -9,7 +9,7 @@ function ratio = roundness(obj)
   area = polyarea(X,Y);
 
   % Calculate perimeter
-  perim = polyperim(X,Y);
+  perimeter = polyperim(X,Y);
 
   % Calculate roundness
-  ratio = (4 * pi * area) / ( perim^2 );
+  ratio = (4 * pi * area) / ( perimeter^2 );
