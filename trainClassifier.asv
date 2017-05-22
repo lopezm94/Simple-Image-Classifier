@@ -23,13 +23,6 @@ trainingFeatures = extractFeatures(request, trainingSet);
 
 % Train classifier
 classifier = trainsvm(trainingFeatures, trainingLabels, class_labels);
+save('.cache',classifier);
 
-% Predict test
-[predLabels, stats] = predictsvm(classifier, testFeatures, ...
-    testLabels, class_labels);
 
-% Show statistics
-showStatistics(stats, class_labels, predLabels, testLabels);
-
-% Save classifier
-save('cache','classifier');

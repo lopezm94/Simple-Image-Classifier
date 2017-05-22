@@ -1,0 +1,21 @@
+function res = predict(filename)
+
+addpath('./testimages');
+% Import svm library
+importDependencies();
+
+% Define class labels
+class_labels = { 'airplanes'; 'barrel'; 'bonsai'; 'brontosaurus'; 'camera';
+  'ceiling_fan'; 'anchor'; 'binocular'; 'brain'; 'butterfly';
+  'car_side'; 'cellphone'};
+
+% Features to extract
+request = {
+  @roundness 'Default';
+  @elongation 'Default';
+  @rectangularity 'Default'
+  };
+
+% Extract Features
+testFeatures = extractFeatures(request, testSet);
+
