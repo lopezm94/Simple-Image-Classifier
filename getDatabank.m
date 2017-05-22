@@ -5,7 +5,7 @@ databank = struct('files',{},'label',{});
 for i=1:length(labels)
 
   label = labels{i};
-  class_location = strcat(pwd() , '/training_images/', label, '/');
+  class_location = strcat(pwd() , '/PrCategories_imatges/', label, '/');
 
   class_set.label = label;
   class_set.files = struct('imfile',{},'annfile',{});
