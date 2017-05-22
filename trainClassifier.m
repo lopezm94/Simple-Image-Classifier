@@ -7,7 +7,8 @@ class_labels = { 'airplanes'; 'barrel'; 'bonsai'; 'brontosaurus'; 'camera';
   'car_side'; 'cellphone'};
 
 % Load data sets
-[trainingSet,trainingLabels,testSet,testLabels] = sampleData(getDatabank(class_labels));
+[trainingSet,trainingLabels,testSet,testLabels] = ...
+    sampleData(getDatabank(class_labels));
 
 % Features to extract
 request = {
@@ -24,9 +25,8 @@ trainingFeatures = extractFeatures(request, trainingSet);
 classifier = trainsvm(trainingFeatures, trainingLabels, class_labels);
 
 % Predict test
-[predLabels, stats] = predictsvm(
-  classifier, testFeatures, testLabels, class_labels
-  );
+[predLabels, stats] = predictsvm(classifier, testFeatures, ...
+    testLabels, class_labels);
 
 % Show statistics
 showStatistics(stats, class_labels, predLabels, testLabels);

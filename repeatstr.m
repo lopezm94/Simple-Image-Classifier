@@ -1,6 +1,6 @@
-% Repeat string n times
+% Repeat string n times into an array struct
 function res = repeatstr(val, n)
-res = [''];
+res = {};
 for i=1:n
-  res = [res; val];
+  res{i} = val;
 end
