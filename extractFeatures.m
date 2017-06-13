@@ -7,8 +7,11 @@ for i=1:n
   row = [];
   obj = set(i);
   for j=1:m
-    extract_feature = request{j,1};
-    row = [row extract_feature(obj)];
+    extract_features = request{j,1};
+    raw_features = extract_features(obj);
+    num_features = numel(raw_features);
+    features = reshape(raw_features,1,num_features);
+    row = [row features];
   end
   res = [res; row];
 end

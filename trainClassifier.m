@@ -14,7 +14,8 @@ class_labels = { 'airplanes'; 'barrel'; 'bonsai'; 'brontosaurus'; 'camera';
 request = {
   @roundness 'Default';
   @elongation 'Default';
-  @rectangularity 'Default'
+  @rectangularity 'Default';
+  @HOG 'Default'
   };
 
 % Extract Features
