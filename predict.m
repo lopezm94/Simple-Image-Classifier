@@ -21,11 +21,14 @@ class_labels = { 'airplanes'; 'barrel'; 'bonsai'; 'brontosaurus'; 'camera';
 request = {
   @roundness 'Default';
   @elongation 'Default';
-  @rectangularity 'Default'
+  @rectangularity 'Default';
+  @HOG 'Default';
+  @solidity 'Default';
+  %@curveness 'Default'
   };
 
 % Extract Features
-testFeatures = extractFeatures(request, testSet);
+testFeatures = extractFeature(request, testSet);
 
 % Predict test
 load('cache','classifier');

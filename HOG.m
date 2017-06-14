@@ -8,8 +8,8 @@ function H = HOG(obj)
     if size(Im,3) == 3
         Im = rgb2gray(Im);
     end
-    nwin_x=12;%number of HOG windows per bound box
-    nwin_y=12;
+    nwin_x=9;%number of HOG windows per bound box
+    nwin_y=9;
     B=9;%number of histogram bins
     [L,C]=size(Im); % L num of lines ; C num of columns
     H=zeros(nwin_x*nwin_y*B,1); % column vector with zeros

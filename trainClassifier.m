@@ -15,12 +15,14 @@ request = {
   @roundness 'Default';
   @elongation 'Default';
   @rectangularity 'Default';
-  @HOG 'Default'
+  @HOG 'Default';
+  @solidity 'Default';
+  %@curveness 'Default'
   };
 
 % Extract Features
-testFeatures = extractFeatures(request, testSet);
-trainingFeatures = extractFeatures(request, trainingSet);
+testFeatures = extractFeature(request, testSet);
+trainingFeatures = extractFeature(request, trainingSet);
 
 % Train classifier
 classifier = trainsvm(trainingFeatures, trainingLabels, class_labels);

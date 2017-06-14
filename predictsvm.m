@@ -8,10 +8,11 @@ m = length(obj_labels);
 probability_matrix = zeros(n,m,'double');
 for i=1:n
   label_vector = polarizeLabels(obj_labels,class_labels{i});
-  [trash, stats{i}, probability_matrix(i,:)] = svmpredict( ...
+  [trash, stats{i}, aux] = svmpredict( ...
     double(label_vector)', ...
     double(feature_matrix), ...
-    classifier{i});
+    classifier{i}, '-b 1');
+    probability_matrix(i,:) = aux(:,1);
 end
 
 [trash, indexes] = max(probability_matrix);
